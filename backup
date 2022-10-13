@@ -1,0 +1,654 @@
+-- MariaDB dump 10.19  Distrib 10.4.20-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: erp_system
+-- ------------------------------------------------------
+-- Server version	10.4.20-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `erp_system`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `erp_system`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `erp_system` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+
+USE `erp_system`;
+
+--
+-- Table structure for table `business_data`
+--
+
+DROP TABLE IF EXISTS `business_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `business_data` (
+  `one` text NOT NULL,
+  `two` text NOT NULL,
+  `three` text NOT NULL,
+  `four` text NOT NULL,
+  `five` text NOT NULL,
+  `six` text NOT NULL,
+  `seven` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `business_data`
+--
+
+LOCK TABLES `business_data` WRITE;
+/*!40000 ALTER TABLE `business_data` DISABLE KEYS */;
+INSERT INTO `business_data` VALUES ('EXAMPLE BRAND NAME','DOKIMASTIKO','T.A.X.: 987456321 - D.O.Y.: A PEIRAIAS','LAKWNIAS 38, PERAMA - T.K.: 18639','PHONE: 6999999999','','');
+/*!40000 ALTER TABLE `business_data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `customer_id` int(128) NOT NULL AUTO_INCREMENT,
+  `brandname` varchar(128) NOT NULL,
+  `profession` varchar(128) NOT NULL,
+  `taxcode` varchar(9) NOT NULL,
+  `address` varchar(128) NOT NULL,
+  `area` varchar(128) NOT NULL,
+  `zipcode` varchar(25) NOT NULL,
+  `DOY` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone1` varchar(20) NOT NULL,
+  `phone2` varchar(20) NOT NULL,
+  `faxnumber` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `website` varchar(100) NOT NULL,
+  `notes` longtext NOT NULL,
+  `vatregime_id` int(11) NOT NULL,
+  `payingway_id` int(11) NOT NULL,
+  `pricelist_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `check_taxcode` int(2) NOT NULL,
+  `check_doy` int(2) NOT NULL,
+  PRIMARY KEY (`customer_id`),
+  KEY `vatregime_id` (`vatregime_id`),
+  KEY `payingway_id` (`payingway_id`),
+  KEY `pricelist_id` (`pricelist_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `customer_ibfk_2` FOREIGN KEY (`vatregime_id`) REFERENCES `vat_regime` (`id`),
+  CONSTRAINT `customer_ibfk_3` FOREIGN KEY (`payingway_id`) REFERENCES `paying_way` (`id`),
+  CONSTRAINT `customer_ibfk_4` FOREIGN KEY (`pricelist_id`) REFERENCES `pricelist` (`id`),
+  CONSTRAINT `customer_ibfk_5` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,'NAKAKIS KAI SIA OE','EMPORIO','111111111','ETHINIKIS ANTISTASEWS 128A','AG DIMITRIOS','18856','HLIOYPOLIS','NAKAKHS','GIORGOS','698657854','210518518','','biciklerido@gmail.com','','ela makari na ta katafero aftin tin fwra epeidi me kourase i malakia',2,2,1,1,1,1),(2,'KLERIDO','SOFTWARE ENGINEER','111111112','LAKWNIAS 38','PERAMAS','18863','A PEIRAIAS','BICI','KLERIDO','6988273698','','','biciklerido@gmail.com','','asgdhjasgdhagsdhasgdhjagsdhjgashjdgajgdahjsgdjahgdhjasgdhjag\nasjdjhagdagdhjgadhjgahjdghajgdhjasgdhashjd\nahdvjasdgajsgdaghjdasdgha\ndgasjdgahjdg',3,4,1,1,1,1),(3,'gsdghfsaghd','asdasdasd','111111113','asdasdasdasda','asdasdasda','18863','dasdasdasdasdas','asdasdas','asdasdas','6454875987','6454875987','6454875987','sdafdfsdfsd','sdfsdfsdfsd','shadgasgdfasghdfasghfdghasdfahsgfdasgh\nshadgasgdfasghdfasghfdghasdfahsgfdasgh',1,1,1,1,1,1),(4,'asgfdaghsfdhasfg','dasdasdasdas','111111114','asdasdasdasdadas','sdadasd','789456321','sdasdasd','dasdasdasd','sdasdadas','123654789','123654789','123654789','sdasdasdasdas','sdasdasdasdas','sdasdasdasdas sdasdasdasda sdasdasdasdas sdasdasdasdas\nsdasdasdasdas sdasdasdasda sdasdasdasdas sdasdasdasdas\nsdasdasdasdas sdasdasdasda sdasdasdasdas sdasdasdasdas\nsdasdasdasdas sdasdasdasda sdasdasdasdas sdasdasdasdas\nsdasdasdasdas sdasdasdasda sdasdasdasdas sdasdasdasdas\nsdasdasdasdas sdasdasdasda sdasdasdasdas sdasdasdasdas',1,1,1,1,1,1),(5,'KLERIDO 38','DGHDASHDS','111111119','ASDASDASDASDAS','ASDASDASDAS','18863','A PEIRAIA ','DASDASD','ASDASDAS','4564545','456456456','56456456456','SDADASDASDAS','DASDASDASDAS','DAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD\nDAUSDGASDASHDFASGHDFAGHSDASDASD',1,1,1,1,1,1),(6,'EVA','','','','','','','','','','','','','','',1,1,1,1,0,0),(8,'DOKIMASTIKO ME HTML EDITOR','','','A PEIRAIAS ','','','','','','','','','','','<html dir=\"ltr\"><head></head><body contenteditable=\"true\"><p><span style=\"font-family: &quot;&quot;;\">ADBASVDASDASV</span></p><h2><span style=\"font-family: Arial; font-size: x-large;\">DASDASDASDA</span></h2><p><span style=\"font-family: Arial; font-style: italic; text-decoration: underline;\">SADADADADA</span></p></body></html>',1,1,1,1,0,1),(9,'OLOKLIROMENOS PELATIS','OLOKLIROMENOS','111111145','PERAMA','A PEIRAIA','18869','LAKWNIAS 38','BICI','KLERIDO','9999999999','9999999999','9999999999','biciklerido@gmail.com','WWW.dsdsd.gr','KAI EDW KAPOIA WRAIO SXOLIA \nGIA TON OLOKLIROMENO PELATI',1,3,2,1,1,1),(10,'sadasdadasda','','','','','','','','','','','','','','',2,2,2,1,0,0),(11,'adsda','','','','','','','','','','','','','','',1,2,2,1,0,0),(13,'SHMERINOS DOKIMASMOS','ADDADA','789456123','AAAAA','','78965','','','','','','','','','',1,2,1,1,1,0),(14,'DOMASMENOS','','789555555','','','','AAAAAAA','','','','','','','','',1,1,1,1,1,1),(15,'QWERASDZXCV','','','','','','','','','','','','','','',1,2,2,1,0,0),(16,'hhhhh','','','','','','','','','','','','','','',1,2,2,1,0,0),(17,'ddddd','','','','','','','','','','','','','','',1,2,2,1,0,0),(18,'sssssssddddd','','','','','','','','','','','','','','',1,2,2,1,0,0);
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer_invoices`
+--
+
+DROP TABLE IF EXISTS `customer_invoices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer_invoices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice_number` varchar(11) NOT NULL,
+  `date` text NOT NULL,
+  `time` text NOT NULL,
+  `initial_value` double NOT NULL,
+  `discount_percent` double NOT NULL,
+  `discount_value` double NOT NULL,
+  `value_beforevat` double NOT NULL,
+  `vat_value` double NOT NULL,
+  `quantity` double NOT NULL,
+  `total` double NOT NULL,
+  `purpose_of_tracking` text NOT NULL,
+  `from_place` text NOT NULL,
+  `to_place` text NOT NULL,
+  `license_plate` varchar(15) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `invoicetype_id` int(11) NOT NULL,
+  `payingway_id` int(11) NOT NULL,
+  `vatregime_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `handwrited_invoice` int(2) NOT NULL,
+  `remarks` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`),
+  KEY `payingway_id` (`payingway_id`),
+  KEY `vatregime_id` (`vatregime_id`),
+  KEY `user_id` (`user_id`),
+  KEY `invoicetype_id` (`invoicetype_id`),
+  CONSTRAINT `customer_invoices_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`),
+  CONSTRAINT `customer_invoices_ibfk_2` FOREIGN KEY (`payingway_id`) REFERENCES `paying_way` (`id`),
+  CONSTRAINT `customer_invoices_ibfk_3` FOREIGN KEY (`vatregime_id`) REFERENCES `vat_regime` (`id`),
+  CONSTRAINT `customer_invoices_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `customer_invoices_ibfk_5` FOREIGN KEY (`invoicetype_id`) REFERENCES `type_of_customer_document` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer_invoices`
+--
+
+LOCK TABLES `customer_invoices` WRITE;
+/*!40000 ALTER TABLE `customer_invoices` DISABLE KEYS */;
+INSERT INTO `customer_invoices` VALUES (1,'789','04/03/2022','',60,0,0,60,10.2,5,70.2,'Sales','Our headquarters','Your headquarters','487',2,1,4,3,1,1,''),(2,'00000001','06/03/2022','20:47',10,0,0,10,1.7,1,11.7,'Sales','Our headquarters','Your headquarters','aaa',2,1,4,3,1,0,'CANCELED'),(3,'00000001','06/03/2022','20:48',10,0,0,10,1.7,1,11.7,'Sales','Our headquarters','Your headquarters','aaa',2,5,4,3,1,0,'CANCEL: SALES INVOICE - DELIVERY NOTE 00000001 06/03/2022');
+/*!40000 ALTER TABLE `customer_invoices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoicenumbering_1`
+--
+
+DROP TABLE IF EXISTS `invoicenumbering_1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invoicenumbering_1` (
+  `number` int(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`number`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoicenumbering_1`
+--
+
+LOCK TABLES `invoicenumbering_1` WRITE;
+/*!40000 ALTER TABLE `invoicenumbering_1` DISABLE KEYS */;
+INSERT INTO `invoicenumbering_1` VALUES (1);
+/*!40000 ALTER TABLE `invoicenumbering_1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoicenumbering_2`
+--
+
+DROP TABLE IF EXISTS `invoicenumbering_2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invoicenumbering_2` (
+  `number` int(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoicenumbering_2`
+--
+
+LOCK TABLES `invoicenumbering_2` WRITE;
+/*!40000 ALTER TABLE `invoicenumbering_2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invoicenumbering_2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoicenumbering_3`
+--
+
+DROP TABLE IF EXISTS `invoicenumbering_3`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invoicenumbering_3` (
+  `number` int(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoicenumbering_3`
+--
+
+LOCK TABLES `invoicenumbering_3` WRITE;
+/*!40000 ALTER TABLE `invoicenumbering_3` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invoicenumbering_3` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoicenumbering_4`
+--
+
+DROP TABLE IF EXISTS `invoicenumbering_4`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invoicenumbering_4` (
+  `number` int(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoicenumbering_4`
+--
+
+LOCK TABLES `invoicenumbering_4` WRITE;
+/*!40000 ALTER TABLE `invoicenumbering_4` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invoicenumbering_4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoicenumbering_5`
+--
+
+DROP TABLE IF EXISTS `invoicenumbering_5`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invoicenumbering_5` (
+  `number` int(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`number`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoicenumbering_5`
+--
+
+LOCK TABLES `invoicenumbering_5` WRITE;
+/*!40000 ALTER TABLE `invoicenumbering_5` DISABLE KEYS */;
+INSERT INTO `invoicenumbering_5` VALUES (1);
+/*!40000 ALTER TABLE `invoicenumbering_5` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `item_transactions1`
+--
+
+DROP TABLE IF EXISTS `item_transactions1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `item_transactions1` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `date` tinytext NOT NULL,
+  `time` tinytext NOT NULL,
+  `item_code` varchar(125) NOT NULL,
+  `item_description` varchar(125) NOT NULL,
+  `quantity` double NOT NULL,
+  `unit_price` double NOT NULL,
+  `discount` double NOT NULL,
+  `vat` double NOT NULL,
+  `etiology` text NOT NULL,
+  `total` double NOT NULL,
+  `transaction_code` int(11) NOT NULL,
+  `customer_invoiceID` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `item_transactions1`
+--
+
+LOCK TABLES `item_transactions1` WRITE;
+/*!40000 ALTER TABLE `item_transactions1` DISABLE KEYS */;
+INSERT INTO `item_transactions1` VALUES (12,'04/03/2022','','0001','ITEM 1',4,10,0,17,'',40,100,1),(13,'04/03/2022','','0005','EIDOS PENTE',1,20,0,17,'',20,100,1),(14,'01/03/2022','','0001','ITEM 1',1,10,0,24,'',10,200,1),(15,'06/03/2022','20:47','0001','ITEM 1',1,10,0,17,'',10,300,2),(16,'06/03/2022','20:47','0001','ITEM 1',1,10,0,17,'',10,301,3);
+/*!40000 ALTER TABLE `item_transactions1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `items`
+--
+
+DROP TABLE IF EXISTS `items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(125) NOT NULL,
+  `description` varchar(125) NOT NULL,
+  `barcode` varchar(125) NOT NULL,
+  `purchase_price` double NOT NULL,
+  `wholesale_price` double NOT NULL,
+  `retail_price` double NOT NULL,
+  `discount` double NOT NULL,
+  `remaining` double NOT NULL DEFAULT 0,
+  `supplierID` int(11) NOT NULL,
+  `vat_categorieID` int(11) NOT NULL,
+  `measurement_unitID` int(11) NOT NULL,
+  `retail_contains_vat` int(2) NOT NULL,
+  `wholesale_contains_vat` int(2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code` (`code`),
+  KEY `measurement_unitID` (`measurement_unitID`),
+  KEY `vat_categorieID` (`vat_categorieID`),
+  KEY `supplierID` (`supplierID`),
+  CONSTRAINT `items_ibfk_2` FOREIGN KEY (`measurement_unitID`) REFERENCES `measurement_unit` (`id`),
+  CONSTRAINT `items_ibfk_3` FOREIGN KEY (`vat_categorieID`) REFERENCES `vat_categorie` (`id`),
+  CONSTRAINT `items_ibfk_4` FOREIGN KEY (`supplierID`) REFERENCES `supplier` (`supplier_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `items`
+--
+
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` VALUES (1,'0001','ITEM 1','kleridoBar',10,10,20,0,-3,1,3,2,1,0),(2,'AB-001','ITEM AB 1','',0,0,0,0,0,0,4,2,1,0),(3,'0002','DOKIMASTIKO 3','ads123',0,0,15.5,0,0,0,2,2,1,0),(4,'0003','DOKIMASTIKO EIDOS 4','',0,0,0,0,0,0,3,2,1,0),(5,'0004','ggggggggggg','',0,0,0,0,0,0,1,2,1,0),(6,'0005','EIDOS PENTE','',0,20,24,0,-1,0,3,2,1,0);
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `measurement_unit`
+--
+
+DROP TABLE IF EXISTS `measurement_unit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `measurement_unit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(3) NOT NULL,
+  `description` varchar(125) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `measurement_unit`
+--
+
+LOCK TABLES `measurement_unit` WRITE;
+/*!40000 ALTER TABLE `measurement_unit` DISABLE KEYS */;
+INSERT INTO `measurement_unit` VALUES (1,'KIL','KILOS'),(2,'PIE','PIECE'),(3,'CME','CUBIC METERS'),(4,'MET','METERS'),(5,'SQM','SQUARE METERS');
+/*!40000 ALTER TABLE `measurement_unit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `paying_way`
+--
+
+DROP TABLE IF EXISTS `paying_way`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `paying_way` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(125) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `paying_way`
+--
+
+LOCK TABLES `paying_way` WRITE;
+/*!40000 ALTER TABLE `paying_way` DISABLE KEYS */;
+INSERT INTO `paying_way` VALUES (1,'Cash'),(2,'On account'),(3,'Bank deposit'),(4,'Credit card');
+/*!40000 ALTER TABLE `paying_way` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pricelist`
+--
+
+DROP TABLE IF EXISTS `pricelist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pricelist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(125) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pricelist`
+--
+
+LOCK TABLES `pricelist` WRITE;
+/*!40000 ALTER TABLE `pricelist` DISABLE KEYS */;
+INSERT INTO `pricelist` VALUES (1,'Wholesale'),(2,'Retail');
+/*!40000 ALTER TABLE `pricelist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `supplier`
+--
+
+DROP TABLE IF EXISTS `supplier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `supplier` (
+  `supplier_id` int(128) NOT NULL AUTO_INCREMENT,
+  `brandname` varchar(128) NOT NULL,
+  `profession` varchar(128) NOT NULL,
+  `taxcode` varchar(9) NOT NULL,
+  `address` varchar(128) NOT NULL,
+  `area` varchar(128) NOT NULL,
+  `zipcode` varchar(25) NOT NULL,
+  `DOY` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone1` varchar(20) NOT NULL,
+  `phone2` varchar(20) NOT NULL,
+  `faxnumber` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `website` varchar(100) NOT NULL,
+  `notes` longtext NOT NULL,
+  `vatregime_id` int(11) NOT NULL,
+  `payingway_id` int(11) NOT NULL,
+  `pricelist_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `check_taxcode` int(2) NOT NULL,
+  `check_doy` int(2) NOT NULL,
+  PRIMARY KEY (`supplier_id`),
+  KEY `payingway_id` (`payingway_id`),
+  KEY `vatregime_id` (`vatregime_id`),
+  KEY `pricelist_id` (`pricelist_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`payingway_id`) REFERENCES `paying_way` (`id`),
+  CONSTRAINT `supplier_ibfk_2` FOREIGN KEY (`vatregime_id`) REFERENCES `vat_regime` (`id`),
+  CONSTRAINT `supplier_ibfk_3` FOREIGN KEY (`pricelist_id`) REFERENCES `pricelist` (`id`),
+  CONSTRAINT `supplier_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `supplier`
+--
+
+LOCK TABLES `supplier` WRITE;
+/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+INSERT INTO `supplier` VALUES (0,'','','','','','','','','','','','','','','',2,2,2,1,0,0),(1,'PROMITHEFTIS 1','AAAA','111111111','','','','A PEIRAIAS','','','','','','','','',1,2,1,1,1,1),(2,'PROMITHEFTIS 2','AAAAA','784512369','A PEIRAIAS','PERAMA','','','','','','','','','','',1,4,2,1,1,0),(3,'PROMITHEFTIS 3 KAI SIA OE','AAAAA','879653212','LAKWNIAS 38','PERAMA','18863','A PEIRAIAS ','','','','','','','','',1,2,2,1,1,1),(4,'kle','douleia','','','','','','','','','','','','','',1,2,2,1,0,0),(5,'kler','','','','','','','','','','','','','','',1,2,2,1,0,0);
+/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `supplier_invoices`
+--
+
+DROP TABLE IF EXISTS `supplier_invoices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `supplier_invoices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice_number` varchar(11) NOT NULL,
+  `date` text NOT NULL,
+  `time` text NOT NULL,
+  `initial_value` double NOT NULL,
+  `discount_percent` double NOT NULL,
+  `discount_value` double NOT NULL,
+  `value_beforevat` double NOT NULL,
+  `vat_value` double NOT NULL,
+  `quantity` double NOT NULL,
+  `total` double NOT NULL,
+  `purpose_of_tracking` text NOT NULL,
+  `from_place` text NOT NULL,
+  `to_place` text NOT NULL,
+  `license_plate` varchar(15) NOT NULL,
+  `supplier_id` int(11) NOT NULL,
+  `invoicetype_id` int(11) NOT NULL,
+  `payment_id` int(11) NOT NULL,
+  `vatregime_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `remarks` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoicetype_id` (`invoicetype_id`),
+  KEY `payment_id` (`payment_id`),
+  KEY `supplier_id` (`supplier_id`),
+  KEY `user_id` (`user_id`),
+  KEY `vatregime_id` (`vatregime_id`),
+  CONSTRAINT `supplier_invoices_ibfk_1` FOREIGN KEY (`invoicetype_id`) REFERENCES `type_of_supplier_document` (`id`),
+  CONSTRAINT `supplier_invoices_ibfk_2` FOREIGN KEY (`payment_id`) REFERENCES `paying_way` (`id`),
+  CONSTRAINT `supplier_invoices_ibfk_3` FOREIGN KEY (`supplier_id`) REFERENCES `supplier` (`supplier_id`),
+  CONSTRAINT `supplier_invoices_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `supplier_invoices_ibfk_5` FOREIGN KEY (`vatregime_id`) REFERENCES `vat_regime` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `supplier_invoices`
+--
+
+LOCK TABLES `supplier_invoices` WRITE;
+/*!40000 ALTER TABLE `supplier_invoices` DISABLE KEYS */;
+INSERT INTO `supplier_invoices` VALUES (1,'789','01/03/2022','',10,0,0,10,2.4,1,12.4,'Purchase','Our headquarters','Your headquarters','',1,1,2,1,1,'');
+/*!40000 ALTER TABLE `supplier_invoices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `type_of_customer_document`
+--
+
+DROP TABLE IF EXISTS `type_of_customer_document`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type_of_customer_document` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `abbreviation` varchar(5) NOT NULL,
+  `description` varchar(125) NOT NULL,
+  `delivery` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type_of_customer_document`
+--
+
+LOCK TABLES `type_of_customer_document` WRITE;
+/*!40000 ALTER TABLE `type_of_customer_document` DISABLE KEYS */;
+INSERT INTO `type_of_customer_document` VALUES (1,'SI-DN','SALES INVOICE - DELIVERY NOTE',1),(2,'SERIN','SERVICE INVOICE',0),(3,'RRT','RECEIPT OF RETAIL TRANSACTIONS',1),(4,'SOS','RECEIPT OF SERVICE',0),(5,'SPCA','SPECIAL CANCELLATION',0),(6,'SI','SALE INVOICE (value)',0),(7,'DN','DELIVERY NOTE',1);
+/*!40000 ALTER TABLE `type_of_customer_document` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `type_of_supplier_document`
+--
+
+DROP TABLE IF EXISTS `type_of_supplier_document`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type_of_supplier_document` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `abbreviation` varchar(5) NOT NULL,
+  `description` varchar(125) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type_of_supplier_document`
+--
+
+LOCK TABLES `type_of_supplier_document` WRITE;
+/*!40000 ALTER TABLE `type_of_supplier_document` DISABLE KEYS */;
+INSERT INTO `type_of_supplier_document` VALUES (1,'PI','PURCHASE INVOICE'),(2,'ISERV','PURCHASE INVOICE (for services)');
+/*!40000 ALTER TABLE `type_of_supplier_document` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `name_surname` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','admin','General User'),(2,'1','1','Klerido Bici'),(9,'wqe','qe','qeq'),(10,'eqwewqs','asas','DQWDQW'),(11,'QWDQWD','QDQDQ','QDQDQ'),(12,'ZCZX','XCXZC','SDQDQ'),(13,'admin2','DASDAS','ADASDADA'),(14,'ll','ll','ll'),(15,'aaa','aaa','aaa');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vat_categorie`
+--
+
+DROP TABLE IF EXISTS `vat_categorie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vat_categorie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(125) NOT NULL,
+  `vat_percentage` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vat_categorie`
+--
+
+LOCK TABLES `vat_categorie` WRITE;
+/*!40000 ALTER TABLE `vat_categorie` DISABLE KEYS */;
+INSERT INTO `vat_categorie` VALUES (1,'Low (6%)',6),(2,'Medium (13%)',13),(3,'High (24%)',24),(4,'Zero V.A.T.',0),(5,'Medium Low (9%)',9);
+/*!40000 ALTER TABLE `vat_categorie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vat_regime`
+--
+
+DROP TABLE IF EXISTS `vat_regime`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vat_regime` (
+  `id` int(25) NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vat_regime`
+--
+
+LOCK TABLES `vat_regime` WRITE;
+/*!40000 ALTER TABLE `vat_regime` DISABLE KEYS */;
+INSERT INTO `vat_regime` VALUES (1,'Normal VAT regime'),(2,'Zero VAT regime'),(3,'Reduced VAT (Border)');
+/*!40000 ALTER TABLE `vat_regime` ENABLE KEYS */;
+UNLOCK TABLES;

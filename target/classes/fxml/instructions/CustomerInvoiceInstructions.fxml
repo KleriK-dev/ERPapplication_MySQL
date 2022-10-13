@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="37.0" prefWidth="685.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+               <HBox.margin>
+                  <Insets top="4.0" />
+               </HBox.margin>
+            </Text>
+            <TextField editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="761.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" text="Customer Documents" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <HTMLEditor htmlText="&lt;html lang=&quot;en&quot;&gt;&#10;            &lt;head&gt;&#10;                &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;&#10;                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;                &lt;style&gt;&#10;                    .kle{&#10;                        font-family: Calibri;&#10;                    }&#10;                &lt;/style&gt;&#10;            &lt;/head&gt;&#10;            &lt;body&gt;&#10;&#10;&#10;&lt;P class=&quot;kle&quot;&gt;[Customer -&amp;gt; Customer Documents] or [Documents -&amp;gt; Customer &#10;    Documents]&lt;BR&gt;&lt;BR&gt;In this option you add and give documents (invoices or &#10;    receipts)&amp;nbsp;to your customers.&lt;/P&gt;&#10;    &lt;P class=&quot;kle&quot;&gt;Also from this option you can manage the documents.&lt;/P&gt;&#10;    &lt;P class=&quot;kle&quot;&gt;Except of adding, deleting and searching a document, you can&lt;BR&gt;&lt;BR&gt;a. &#10;    Issue Special Cancellation (&lt;STRONG&gt;Special Cancellation button&lt;/STRONG&gt; in the &#10;    button bar of the list)&lt;/P&gt;&#10;    &lt;P class=&quot;kle&quot;&gt;&lt;BR&gt;&lt;STRONG&gt;Button Bar&lt;BR&gt;&lt;/STRONG&gt;--------------&lt;BR&gt;&lt;STRONG&gt;Special &#10;    Cancellation:&lt;/STRONG&gt; Issuance of Special Cancellation. By issuing the special &#10;    cancellation in this way, its registration makes exactly the opposite moves from &#10;    the original and there is no need to define a Special Cancellation for each &#10;    document. It's essential for the document to have the same date as current date &#10;    esle it can not be canceled.&lt;BR&gt;&lt;P&gt;&lt;STRONG&gt;Delete Document :&lt;/STRONG&gt; This button can be used only for &#10;        &lt;STRONG&gt;handwritten invoices&lt;/STRONG&gt;. When deleting a handwritten invoice, at &#10;        the same time all it's item transactions will be deleted.&lt;BR&gt;&lt;/P&gt;&lt;STRONG&gt;Note: &lt;/STRONG&gt;You can also &#10;    &lt;U&gt;reprint&lt;/U&gt; it through the &quot;Document View&quot; screen. The document view is &#10;    activated with the corresponding button from the button bar.&lt;/P&gt;&#10;&#10;    &lt;/body&gt;&#10;    &lt;/html&gt;" prefHeight="442.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </HTMLEditor>
+   </center>
+</BorderPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="280.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database.toolbox.CleanDatabaseController">
+    <children>
+        <TextArea editable="false" layoutX="5.0" layoutY="5.0" prefHeight="222.0" prefWidth="590.0" text="CLEAN DATABASE&#10;&#10;[Support -&gt; Database Maintenance -&gt; Clean Database]&#10;&#10;This option MUST be used only one time as it is EXTREMELY DANGEROUS as there will be loose of data.&#10;&#10;This option will be used after you have made your tries on the application and have learned it. You have &#10;to use this option to clean the application from the default data and your tries.&#10;&#10;This way you can have a fresh start where all numberings will start from 1." />
+        <Button fx:id="cleanButton" layoutX="23.0" layoutY="241.0" mnemonicParsing="false" onAction="#CleanDatabase" text="Clean Database">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Actions-edit-clear-icon.png" />
+               </image></ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="closeButton" layoutX="499.0" layoutY="241.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/cancel-icon.png" />
+               </image></ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

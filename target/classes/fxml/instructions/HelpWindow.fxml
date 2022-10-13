@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.web.HTMLEditor?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.main.HelpController">
+   <top>
+      <GridPane hgap="2.0" prefHeight="125.0" vgap="2.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="customerButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenCustomerHelp" text="Customer" />
+            <Button fx:id="customerDocumentButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenCustomerDocumentHelp" text="Customer Document" GridPane.rowIndex="1" />
+            <Button fx:id="supplierButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenSupplierHelp" text="Supplier" GridPane.columnIndex="1" />
+            <Button fx:id="supplierDocumentButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenSupplierDocumentHelp" text="Supplier Document" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="newCustomerDocumentButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenNewCustomerDocumentHelp" text="New Customer Document" GridPane.rowIndex="2" />
+            <Button fx:id="newSupplierDocumentButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenNewSupplierDocumentHelp" text="New Supplier Document" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="ItemButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenItemHelp" text="Item" GridPane.columnIndex="2" />
+            <Button fx:id="itemTransactionButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OpenItemTransactionHelp" text="Item Transaction" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </top>
+   <center>
+      <HTMLEditor htmlText="&lt;html lang=&quot;en&quot;&gt;        &lt;head&gt;            &lt;meta charset=&quot;UTF-8&quot;&gt;            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;            &lt;style&gt;                .kle{                    font-family: Calibri;                }            &lt;/style&gt;        &lt;/head&gt;        &lt;body&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Logic behind the application:&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;When you are invoicing a customer the application has to know which customer we are invoicing and what items he is buying.&lt;BR&gt;This is achieved by looking into the database the inserted customers and items. If there does not exist the customer or the item you can not invoice&lt;BR&gt;this customer. &lt;BR&gt;So it is important to follow the following steps to achieve a successful invoicment!&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Steps to follow to start working with the application:&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;1.&lt;/STRONG&gt; Create your storage by adding items. [Inventory -&amp;gt; Inventory Items -&amp;gt; &lt;STRONG&gt;button:&lt;/STRONG&gt; add item] or from menu [Database -&amp;gt; Inventory -&amp;gt; Items -&amp;gt; add item]&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;2.&lt;/STRONG&gt; Add your Suppliers (if you have) to the system. [Supplier -&amp;gt; Supplier Accounts -&amp;gt; &lt;STRONG&gt;button:&lt;/STRONG&gt; add supplier] or from menu [Database -&amp;gt; Suppliers -&amp;gt; add supplier]&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;3.&lt;/STRONG&gt; Save in the system your new supplier documents so your storage can be updated. [Supplier -&amp;gt; Supplier Documents -&amp;gt; &lt;STRONG&gt;button:&lt;/STRONG&gt; add] or from menu [Documents -&amp;gt; Supplier Documents -&amp;gt; &lt;STRONG&gt;button:&lt;/STRONG&gt; add]&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;4.&lt;/STRONG&gt; Add your Customers (The ones that you already know. Later on you will add your knew customers before you invoice them) [Customer -&amp;gt; Customer Accounts -&amp;gt; button: add] or from menu [Database -&amp;gt; Customers -&amp;gt; &lt;STRONG&gt;button:&lt;/STRONG&gt; add]&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;5.&lt;/STRONG&gt; Last step is the invoicing. If you have followed the previous steps then you are ready to invoice a customer by following the path. [Customer -&amp;gt; Customer Documents -&amp;gt; button: add] or from menu [Documents -&amp;gt; Customer Documents -&amp;gt; &lt;STRONG&gt;button:&lt;/STRONG&gt; add] or for a faster way from shortcut buttons below the menu [&lt;STRONG&gt;button:&lt;/STRONG&gt; New Customer Document]&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Tip 1 :&lt;/STRONG&gt; In the near future you can avoid the steps 2 and 3 for the moment and go straight for step 1 (if the item that the customer wants, it is not saved to the system) then for step 4 (if customer is not saved to the system) and then for step 5. And later on you can follow step 2 and 3 so you can update your inventory and be ready for the next day.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Tip 2 :&lt;/STRONG&gt; If you know that the customer you want to invoice is already saved to the system and the items he wants are also at the inventory then you can pass all the steps and go for step 5. And later on you can follow step 2 and 3 so you can update your inventory and be ready for the next day.&lt;/P&gt;&lt;/body&gt;&lt;/html&gt; " prefHeight="200.0" prefWidth="506.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HTMLEditor>
+   </center>
+</BorderPane>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.supplierInvoices.ViewSupplierInvoiceController">
+    <top>
+        <GridPane hgap="2.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="0.0" prefWidth="0.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="534.0" minWidth="73.0" prefWidth="75.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="671.0" minWidth="70.0" prefWidth="79.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="671.0" minWidth="320.0" prefWidth="320.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="671.0" minWidth="39.0" prefWidth="41.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" prefWidth="89.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" prefWidth="145.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" prefWidth="47.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+                    <GridPane.margin>
+                        <Insets left="61.0" />
+                    </GridPane.margin>
+                </Text>
+                <TextField fx:id="id" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="2" />
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="25.0" />
+                    </GridPane.margin>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice type" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="8.0" />
+                    </GridPane.margin>
+                </Text>
+                <TextField fx:id="supplier_id" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="invoicetype_id" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="supplier_brandname" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <TextField fx:id="invoicetype_description" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Button disable="true" mnemonicParsing="false" styleClass="search-buttons" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/search-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button disable="true" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="search-buttons" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/Folder-Mac-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice Number" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <TextField fx:id="invoicenumber" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="96.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <HBox GridPane.columnIndex="3">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                            <HBox.margin>
+                                <Insets left="25.0" top="6.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="dateTextfield" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css">
+                            <HBox.margin>
+                                <Insets left="5.0" top="3.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                            <HBox.margin>
+                                <Insets left="30.0" top="6.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="timeTextfield" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css">
+                            <HBox.margin>
+                                <Insets left="5.0" top="3.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="37.0" />
+                    </GridPane.margin>
+                </Text>
+                <Button disable="true" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="search-buttons" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/Folder-Mac-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                    <children>
+                        <TextField fx:id="payingway_id" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" />
+                        <TextField fx:id="payingway_description" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="118.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" />
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+    </top>
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="800.0" stylesheets="@../../styles/TableViewWindowsStyling.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Items">
+                    <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <GridPane layoutX="14.0" layoutY="327.0" prefHeight="85.0" prefWidth="735.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="80.0" prefWidth="86.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="183.0" prefWidth="184.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0" prefWidth="101.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="156.0" prefWidth="216.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="445.0" minWidth="1.0" prefWidth="32.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="119.0" prefWidth="119.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initial Value">
+                                            <GridPane.margin>
+                                                <Insets left="16.0" />
+                                            </GridPane.margin>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Discount Value" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets left="-2.0" />
+                                            </GridPane.margin>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Value before VAT" GridPane.columnIndex="2">
+                                            <GridPane.margin>
+                                                <Insets />
+                                            </GridPane.margin>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="V.A.T." GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets left="62.0" />
+                                            </GridPane.margin>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets left="47.0" />
+                                            </GridPane.margin>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" GridPane.columnIndex="4">
+                                            <GridPane.margin>
+                                                <Insets />
+                                            </GridPane.margin>
+                                        </Text>
+                                        <TextField fx:id="initialvalue" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" />
+                                        <TextField fx:id="discountvalue" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="60.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <TextField fx:id="valueBeforeVAT" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="80.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="3" />
+                                        <TextField fx:id="VAT" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                        <TextField fx:id="total" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="110.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="5" />
+                                        <TextField fx:id="quantity" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="43.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                        <TextField fx:id="discountInvoice" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="60.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\% Discount" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets left="17.0" />
+                                            </GridPane.margin>
+                                        </Text>
+                                    </children>
+                                </GridPane>
+                                <HBox layoutX="14.0" layoutY="6.0" prefHeight="32.0" prefWidth="363.0" spacing="15.0">
+                                    <children>
+                                        <Button disable="true" mnemonicParsing="false" text="Add Item">
+                                            <graphic>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/table-add-icon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button disable="true" mnemonicParsing="false" text="Edit Item">
+                                            <graphic>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/table-edit-icon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button disable="true" mnemonicParsing="false" text="Delete Item">
+                                            <graphic>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/table-delete-icon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <TableView fx:id="table" layoutX="3.0" layoutY="38.0" prefHeight="282.0" prefWidth="772.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_code" minWidth="60.0" prefWidth="60.0" text="Code" />
+                                        <TableColumn fx:id="col_description" minWidth="200.0" prefWidth="200.0" text="Description" />
+                                        <TableColumn fx:id="col_quantity" minWidth="75.0" prefWidth="75.0" text="Quantity" />
+                                        <TableColumn fx:id="col_price" minWidth="100.0" prefWidth="100.0" text="Price per Unit" />
+                                        <TableColumn fx:id="col_discount" minWidth="75.0" prefWidth="75.0" text="\% Discount" />
+                                        <TableColumn fx:id="col_VAT" minWidth="50.0" prefWidth="50.0" text="\% VAT" />
+                                        <TableColumn fx:id="col_total" minWidth="75.0" prefWidth="75.0" text="Total" />
+                                        <TableColumn fx:id="col_etiology" minWidth="285.0" prefWidth="285.0" text="Etiology" />
+                                    </columns>
+                                </TableView>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Invoice Elements">
+                    <content>
+                        <GridPane vgap="3.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="108.0" prefWidth="108.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="2.0" prefWidth="24.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="101.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="228.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="33.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="10.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Purpose of Tracking" GridPane.rowIndex="2" />
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="From" GridPane.rowIndex="3">
+                                    <GridPane.margin>
+                                        <Insets left="75.0" />
+                                    </GridPane.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To" GridPane.rowIndex="4">
+                                    <GridPane.margin>
+                                        <Insets left="89.0" />
+                                    </GridPane.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="License Plate" GridPane.rowIndex="5">
+                                    <GridPane.margin>
+                                        <Insets left="35.0" />
+                                    </GridPane.margin>
+                                </Text>
+                                <TextField fx:id="purposeOfTracking" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="from" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField fx:id="to" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <TextField fx:id="licenseplate" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="77.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VAT Regime" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <GridPane.margin>
+                                        <Insets left="25.0" />
+                                    </GridPane.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registration User" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                <TextField fx:id="VATregime" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                <TextField fx:id="registrationUser" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="118.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                <Button disable="true" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="search-buttons" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../images/Folder-Mac-icon.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks" GridPane.rowIndex="6">
+                                    <GridPane.margin>
+                                        <Insets left="59.0" />
+                                    </GridPane.margin>
+                                </Text>
+                                <TextField fx:id="remarks" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                            </children>
+                        </GridPane>
+                    </content></Tab>
+            </tabs>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox prefHeight="33.0" prefWidth="800.0" spacing="212.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="printButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#PrintInvoice" prefHeight="33.0" prefWidth="85.0" text="Reprint">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/print-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="cancelButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#CloseSupplierInvoiceWindow" prefHeight="33.0" prefWidth="97.0" text="Cancel">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/cancel-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="33.0" prefWidth="121.0" text="Instructions">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/Help-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="380.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database.toolbox.RestoreController">
+    <children>
+        <GridPane layoutY="5.0" prefHeight="83.0" prefWidth="700.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="33.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="82.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="349.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="0.0" prefWidth="38.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="159.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="45.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Server" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets left="45.0" />
+                    </GridPane.margin>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data Base" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="26.0" />
+                    </GridPane.margin>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin>
+                </Text>
+                <TextField fx:id="server" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="2" />
+                <TextField fx:id="database" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <children>
+                        <TextField fx:id="username" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css">
+                            <HBox.margin>
+                                <Insets top="1.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                            <HBox.margin>
+                                <Insets left="6.0" right="3.0" top="4.0" />
+                            </HBox.margin>
+                        </Text>
+                        <PasswordField fx:id="password" editable="false" focusTraversable="false" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css">
+                            <HBox.margin>
+                                <Insets top="1.0" />
+                            </HBox.margin>
+                        </PasswordField>
+                    </children>
+                </HBox>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Port" GridPane.columnIndex="3">
+                    <GridPane.margin>
+                        <Insets left="11.0" />
+                    </GridPane.margin>
+                </Text>
+                <TextField fx:id="port" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="146.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" GridPane.columnIndex="4" />
+            </children>
+        </GridPane>
+        <Text layoutX="91.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File" />
+        <TextField fx:id="file" editable="false" focusTraversable="false" layoutX="113.0" layoutY="92.0" prefHeight="27.0" prefWidth="534.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" />
+        <Button fx:id="choosePathButton" layoutX="647.0" layoutY="91.0" mnemonicParsing="false" onAction="#ChoosePath" styleClass="search-buttons" stylesheets="@../../styles/TableViewWindowsStyling.css">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/Folder-Mac-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </padding>
+        </Button>
+        <Button fx:id="exitButton" layoutX="30.0" layoutY="135.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="100.0" text="Exit">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/cancel-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic></Button>
+        <Button fx:id="restoreButton" layoutX="567.0" layoutY="135.0" mnemonicParsing="false" onAction="#restoreDatabase" prefHeight="25.0" prefWidth="100.0" text="Restore">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/Misc-Download-Database-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic></Button>
+        <TextArea editable="false" focusTraversable="false" layoutX="8.0" layoutY="174.0" prefHeight="197.0" prefWidth="685.0" text="[Toolbox -&gt; Restore Database] or [Support - &gt; Database Maintenance -&gt; Restore]&#10;&#10;With this process you &quot;upload&quot; to the database of the application the data from an older backup that you have taken.&#10;&#10;This procedure is necessary in case you have lost your data.&#10;&#10;To perform the process select the backup file and press the &quot;Restore&quot; Button&#10;&#10;This process uses the mysql program of MySQL." />
+    </children>
+</AnchorPane>

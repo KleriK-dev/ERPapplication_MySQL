@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox prefHeight="37.0" prefWidth="685.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="761.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" text="Supplier Documents" />
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" top="5.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <HTMLEditor htmlText="&lt;html lang=&quot;en&quot;&gt;&#10;            &lt;head&gt;&#10;                &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;&#10;                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;                &lt;style&gt;&#10;                    .kle{&#10;                        font-family: Calibri;&#10;                    }&#10;                &lt;/style&gt;&#10;            &lt;/head&gt;&#10;            &lt;body&gt;&#10;        &#10;                &lt;P class=&quot;kle&quot;&gt;[Supplier -&amp;gt; Supplier Documents] or [Documents -&amp;gt; Supplier &#10;                    Documents]&lt;BR&gt;&lt;P class=&quot;kle&quot;&gt;In this option you enter and issue the documents concerning your &#10;                    suppliers.&lt;/P&gt;&#10;                    &lt;P class=&quot;kle&quot;&gt;Also from this option you can manage the documents.&lt;/P&gt;&#10;                    &lt;P class=&quot;kle&quot;&gt;Here you can register, display, delete and search for a document. This can be &#10;                    made from the &lt;STRONG&gt;button bar &lt;/STRONG&gt;and you can search for a document from &#10;                    the&lt;STRONG&gt; search &#10;                    field.&lt;/STRONG&gt;&lt;BR&gt;&lt;BR&gt;&lt;STRONG&gt;&lt;BR&gt;&lt;/STRONG&gt;&lt;STRONG&gt;&lt;BR&gt;&lt;/STRONG&gt;&lt;/P&gt;&#10;&#10;            &lt;/body&gt;&#10;        &lt;/html&gt;" prefHeight="442.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </HTMLEditor>
+    </center>
+</BorderPane>

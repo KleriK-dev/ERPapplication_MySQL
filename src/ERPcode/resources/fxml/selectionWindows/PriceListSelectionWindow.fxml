@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="242.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.selectionWindows.PriceListSelectionController">
+    <children>
+        <TableView fx:id="table" onMouseClicked="#HandleSelectedRow" prefHeight="200.0" prefWidth="459.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="col_pricelist" prefWidth="383.0" text="Pricelist" />
+            </columns>
+        </TableView>
+        <Button fx:id="selectButton" layoutX="14.0" layoutY="209.0" mnemonicParsing="false" onAction="#AddPricelist" text="Select">
+            <graphic>
+                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/Select-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="cancelButton" layoutX="374.0" layoutY="209.0" mnemonicParsing="false" onAction="#CloseSelectionWindow" text="Cancel">
+            <graphic>
+                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/cancel-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <TextField fx:id="selectedID" disable="true" editable="false" focusTraversable="false" layoutX="126.0" layoutY="209.0" prefHeight="25.0" prefWidth="29.0" visible="false" />
+        <TextField fx:id="selectedPricelist" disable="true" editable="false" focusTraversable="false" layoutX="215.0" layoutY="209.0" prefHeight="25.0" prefWidth="86.0" visible="false" />
+      <TextField fx:id="openedFromTextfield" disable="true" editable="false" focusTraversable="false" layoutX="88.0" layoutY="209.0" visible="false" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox prefHeight="37.0" prefWidth="685.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="761.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" text="Item Transactions Screen" />
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" top="5.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <HTMLEditor htmlText="    &lt;html lang=&quot;en&quot;&gt;        &lt;head&gt;            &lt;meta charset=&quot;UTF-8&quot;&gt;            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;            &lt;style&gt;                .kle{                    font-family: Calibri;                }            &lt;/style&gt;        &lt;/head&gt;        &lt;body&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Item transactions&lt;/STRONG&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;Here you can see all of your storage movements.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;The transactions are:&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;a. Purchased items from a supplier document &lt;BR&gt;b. Sold items from a customer document &lt;BR&gt;c. Sold items from a handwritten customer document &lt;BR&gt;d. Canceled items from a Special Cancellation document that returns the items back to the storage&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;Each transaction has it's own code that describes it and a color.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Transaction code description&lt;/STRONG&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;FONT color=#51ff7c&gt;&lt;STRONG&gt;200 &lt;/STRONG&gt;&lt;/FONT&gt;&lt;FONT color=#000000&gt;-&amp;gt; Item transaction from a supplier document (That means this item is inserted to your storage). This transaction will be deleted if you decide to delete the inserted supplier invoice.&lt;/FONT&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;FONT color=#ff8040&gt;&lt;STRONG&gt;100 &lt;/STRONG&gt;&lt;/FONT&gt;&lt;FONT color=#000000&gt;-&amp;gt; Item transaction from a handwritten customer document (That means this item left from your storage). This transaction will be deleted if you decide to delete the inserted handwritten invoice.&lt;/FONT&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;FONT color=#e8e800&gt;&lt;STRONG&gt;300 &lt;/STRONG&gt;&lt;/FONT&gt;&lt;FONT color=#000000&gt;-&amp;gt; Item transaction from a customer document (That means this item left from your storage). This transaction can not be deleted.&lt;/FONT&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;301 &lt;/STRONG&gt;&lt;/FONT&gt;&lt;FONT color=#000000&gt;-&amp;gt; Item transaction from a Special Cancellation of a customer document (That means this item is inserted back to your storage). This transaction can not be deleted.&lt;/FONT&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Note: &lt;/STRONG&gt;You can see each transaction's origin document by double clicking in it.&lt;/P&gt;&lt;/body&gt;&lt;/html&gt; " prefHeight="442.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </HTMLEditor>
+    </center>
+</BorderPane>

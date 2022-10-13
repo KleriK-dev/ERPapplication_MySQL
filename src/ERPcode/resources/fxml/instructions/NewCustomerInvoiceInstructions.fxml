@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox prefHeight="37.0" prefWidth="685.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="761.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" text="New Customer Document" />
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" top="5.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <HTMLEditor htmlText="    &lt;html lang=&quot;en&quot;&gt;            &lt;head&gt;                &lt;meta charset=&quot;UTF-8&quot;&gt;                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;                &lt;style&gt;                    .kle{                        font-family: Calibri;                    }                &lt;/style&gt;            &lt;/head&gt;            &lt;body&gt;    &lt;P class=&quot;kle&quot;&gt;[Customer -&amp;gt; Customer Documents -&amp;gt; New Invoice]&lt;BR&gt;&lt;BR&gt;Your customer         document is divided into the following parts &lt;BR&gt;&lt;BR&gt;&lt;STRONG&gt;Handwritten         invoice&lt;/STRONG&gt;: The invoice can be changed to &quot;Turn on/off&quot; button. You will         now if the invoice you are working on is handwritten by checking if the checkbox         is checked.&lt;BR&gt;&lt;BR&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Items&lt;/FONT&gt;&lt;/STRONG&gt;&lt;BR&gt;On the         items screen, enter the items of the document.&lt;BR&gt;Item registration can be done         in full screen (opens a window for each item).&lt;BR&gt;&lt;BR&gt;Here are the values of the         document: &lt;BR&gt;&lt;STRONG&gt;Initial Value:&lt;/STRONG&gt; The value (excluding VAT) as         derived from the items. The deductions of the item discounts have also been made         here.&amp;nbsp;&lt;BR&gt;&lt;STRONG&gt;Discount%:&lt;/STRONG&gt; The% of the total discount. Next to         the percentage is the discount of the document before VAT. &lt;BR&gt;&lt;STRONG&gt;Net         Before VAT:&lt;/STRONG&gt; The amount before VAT&lt;BR&gt;&lt;STRONG&gt;VAT:&lt;/STRONG&gt; The total         VAT of the document&lt;BR&gt;&lt;STRONG&gt;Discount (Total):&lt;/STRONG&gt; Total Discount         (including VAT). It is useful if we want to make a discount on the final set.         Automatically updates the% Discount and the discount of the         document.&lt;BR&gt;&lt;STRONG&gt;Total:&lt;/STRONG&gt; The final Total of the         document.&lt;BR&gt;&lt;BR&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Elements&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/P&gt;        &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;VAT Regime: &lt;/STRONG&gt;The Scheme is automatically updated by the         Customer. If you want you can change it for this document.&lt;/P&gt;        &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;License Plate: &lt;/STRONG&gt;Give the registration number of the vehicle         that will transport the goods (it is necessary in some documents).&lt;/P&gt;            &lt;/body&gt;    &lt;/html&gt;" prefHeight="442.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </HTMLEditor>
+    </center>
+</BorderPane>

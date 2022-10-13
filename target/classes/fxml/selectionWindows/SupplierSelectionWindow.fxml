@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="242.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.selectionWindows.SupplierSelectionController">
+    <children>
+        <Button fx:id="selectButton" layoutX="14.0" layoutY="209.0" mnemonicParsing="false" onAction="#AddSupplier" text="Select">
+            <graphic>
+                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/Select-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="cancelButton" layoutX="374.0" layoutY="209.0" mnemonicParsing="false" onAction="#CloseSelectionWindow" text="Cancel">
+            <graphic>
+                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/cancel-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <TextField fx:id="selectedID" disable="true" editable="false" focusTraversable="false" layoutX="126.0" layoutY="209.0" prefHeight="25.0" prefWidth="29.0" visible="false" />
+        <TextField fx:id="selectedSupplier" disable="true" editable="false" focusTraversable="false" layoutX="215.0" layoutY="209.0" prefHeight="25.0" prefWidth="86.0" visible="false" />
+        <TextField fx:id="openedFromTextfield" editable="false" focusTraversable="false" layoutX="89.0" layoutY="209.0" prefHeight="25.0" prefWidth="101.0" visible="false" />
+        <TableView fx:id="table" onMouseClicked="#HandleSelectedRow" prefHeight="200.0" prefWidth="459.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="col_brandname" prefWidth="231.0" text="Brandname" />
+                <TableColumn fx:id="col_taxcode" prefWidth="152.0" text="TAX Code" />
+            <TableColumn fx:id="col_profession" maxWidth="115.0" minWidth="115.0" prefWidth="115.0" text="Profession" />
+            <TableColumn fx:id="col_vatregimeID" prefWidth="75.0" text="vatregimeID" visible="false" />
+            <TableColumn fx:id="col_payingwayID" prefWidth="75.0" text="payingwayID" visible="false" />
+            </columns>
+        </TableView>
+      <TextField fx:id="supplierVatregimeID" disable="true" editable="false" focusTraversable="false" layoutX="99.0" layoutY="219.0" prefHeight="25.0" prefWidth="50.0" visible="false" />
+      <TextField fx:id="supplierPayingWayID" disable="true" editable="false" focusTraversable="false" layoutX="151.0" layoutY="219.0" prefHeight="25.0" prefWidth="50.0" visible="false" />
+    </children>
+</AnchorPane>

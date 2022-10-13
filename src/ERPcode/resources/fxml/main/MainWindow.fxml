@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.main.MainController">
+   <top>
+      <VBox prefHeight="82.0" prefWidth="1200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Database">
+                     <items>
+                        <MenuItem fx:id="smallCustomerButton" mnemonicParsing="false" onAction="#openCustomersWindow" text="Customers">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/customer-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="smallSupplierButton" mnemonicParsing="false" onAction="#OpenSupplierWindow" text="Suppliers">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/Office-Customer-Male-Light-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <Menu mnemonicParsing="false" text="Inventory">
+                          <items>
+                            <MenuItem fx:id="itemsMenuButton" mnemonicParsing="false" onAction="#OpenItemsWindow" text="Items" />
+                              <MenuItem fx:id="transactionButton2" mnemonicParsing="false" onAction="#OpenTransactionWindow" text="Item Transactions" />
+                          </items>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/inventory-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="usersMenu" mnemonicParsing="false" onAction="#OpenUsersWindow" text="Users">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/user-settings-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Documents">
+                  <items>
+                    <MenuItem fx:id="smallCustInvButton" mnemonicParsing="false" onAction="#OpenCustomerInvoiceWindow" text="Customer Documents">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/customer-invoice-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="smallSupplierInvoiceButton" mnemonicParsing="false" onAction="#OpenSupplierInvoiceWindow" text="Supplier Documents">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/customer-invoice2-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Support">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Database Maintenance">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#OpenBackupWindow" text="Backup" />
+                              <MenuItem mnemonicParsing="false" onAction="#OpenRestoreWindow" text="Restore" />
+                              <MenuItem mnemonicParsing="false" onAction="#OpenCleanDatabaseWindow" text="Clean Database" />
+                           </items>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/Database-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="helpButton" mnemonicParsing="false" onAction="#OpenHelpWindow" text="Help">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/Help-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Power">
+                     <items>
+                        <MenuItem fx:id="ChangeUserMenu" mnemonicParsing="false" onAction="#OpenLoginWindow" text="Change User">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/Users-Lifecycle-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="exitMenuButton" mnemonicParsing="false" onAction="#exit" text="Shut Down">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/ShutDown-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <HBox prefHeight="54.0" styleClass="under-menu" stylesheets="@../../styles/mainStyling.css">
+               <children>
+                  <Button fx:id="customerButton1" mnemonicParsing="false" onAction="#openCustomersWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/customer-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="250.0" right="10.0" top="8.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Customers" />
+                     </tooltip></Button>
+                  <Button fx:id="SuppliersButton2" mnemonicParsing="false" onAction="#OpenSupplierWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/supplier-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" top="8.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Suppliers" />
+                     </tooltip></Button>
+                  <Button fx:id="itemsButton2" mnemonicParsing="false" onAction="#OpenItemsWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/inventory-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" top="8.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Item Inventory" />
+                     </tooltip></Button>
+                  <Button fx:id="navCustInvButton" mnemonicParsing="false" onAction="#OpenCustomerInvoiceWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/customer-invoice-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" top="8.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Customer Documents" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="SupplierInvoiceButton1" mnemonicParsing="false" onAction="#OpenSupplierInvoiceWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/supplier-invoice-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" top="8.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Supplier Documents" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="NewCustInvoiceButton" layoutX="428.0" layoutY="18.0" mnemonicParsing="false" onAction="#OpenNewCustomerInvoiceWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/New-invoice-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="New Customer Document" />
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="8.0" />
+                     </HBox.margin>
+                  </Button>
+               </children></HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.2141350210970464" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+         <items>
+            <Accordion prefWidth="123.0" styleClass="accordion-color" stylesheets="@../../styles/mainStyling.css" SplitPane.resizableWithParent="false" expandedPane="$customerPane"> <!-- expandedPane="$customerPane" -->
+              <panes>
+                <TitledPane fx:id="customerPane" animated="false" text="Customer">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="inside-titlePane" stylesheets="@../../styles/mainStyling.css">
+                           <children>
+                              <Button fx:id="customerButton2" mnemonicParsing="false" onAction="#openCustomersWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Customer Accounts" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/customer-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="customerInvoiceButton2" mnemonicParsing="false" onAction="#OpenCustomerInvoiceWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Customer Documents" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/customer-invoice-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children></VBox>
+                     </content>
+                  </TitledPane>
+                <TitledPane animated="false" text="Supplier">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="inside-titlePane" stylesheets="@../../styles/mainStyling.css">
+                           <children>
+                              <Button fx:id="SupplierButton1" mnemonicParsing="false" onAction="#OpenSupplierWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Supplier Accounts" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/supplier-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="SupplierInvoiceButton2" mnemonicParsing="false" onAction="#OpenSupplierInvoiceWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Supplier Documents" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/supplier-invoice-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children></VBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="Inventory">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="inside-titlePane" stylesheets="@../../styles/mainStyling.css">
+                           <children>
+                              <Button fx:id="itemsButton1" mnemonicParsing="false" onAction="#OpenItemsWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Inventory Items" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/inventory-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="transactionButton1" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onAction="#OpenTransactionWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Product Transactions" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/item-transaction-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children></VBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="ToolBox">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="inside-titlePane" stylesheets="@../../styles/mainStyling.css">
+                           <children>
+                              <Button fx:id="businessDataButton" mnemonicParsing="false" onAction="#OpenBusinessData" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Business Info" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/Folder-Data-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="backupButton" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onAction="#OpenBackupWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Backup Database" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/Backup-Database-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="restoreButton" layoutX="21.0" layoutY="76.0" mnemonicParsing="false" onAction="#OpenRestoreWindow" styleClass="navbar-buttons" stylesheets="@../../styles/mainStyling.css" text="Restore Database" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/Misc-Download-Database-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children></VBox>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <Pane prefHeight="200.0" prefWidth="1622.0" />
+         </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <Pane prefHeight="19.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="679.0" layoutY="1.0" prefHeight="17.0" prefWidth="36.0" text="User:" />
+            <Label fx:id="programmeUser" layoutX="715.0" layoutY="1.0" />
+            <Label layoutX="424.0" layoutY="1.0" prefHeight="17.0" prefWidth="196.0" text="\@ERP_System 2022 by Klerido Bici" />
+            <Label fx:id="time" layoutX="850.0" layoutY="1.0" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,49 @@
+.backgroundA{
+    -fx-background-color: #2f4360;
+}
+
+.formBackground{
+    -fx-background-color: #4d94ff;
+}
+
+.text-field {
+  -fx-border-color: white;
+  -fx-border-width: 0 0 2 0;
+  -fx-background-color: transparent;
+  -fx-prompt-text-fill: white;
+  -fx-text-inner-color: white;
+  -fx-font-size: 16px;
+}
+
+.login-button{
+    -fx-background-color: #80b3ff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-transition-duration: 0.4s;
+}
+
+.login-button:hover{
+    -fx-background-color: #b3d1ff;
+}
+
+.login-button:pressed{
+    -fx-background-color: #80b3ff;
+}
+
+.login-title{
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-font-size: 24px;
+}
+
+.welcome-title{
+    -fx-text-fill: white;
+    -fx-font-size: 36px;
+    -fx-font-family: Georgia, serif;
+}
+
+.text-under-title{
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+}

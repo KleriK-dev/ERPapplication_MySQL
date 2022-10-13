@@ -1,0 +1,84 @@
+.titled-pane 
+{
+-fx-text-fill: white;
+-fx-alignment: center;
+-fx-font-size: 14px;
+}
+.titled-pane:focused 
+{
+-fx-text-fill: white;
+}
+.titled-pane > .title 
+{
+/*-fx-background-color: #4278c9;*/
+-fx-background-insets: 0, 1, 2;
+-fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+    -fx-background-color:
+            linear-gradient(#6b9fff, #3a81fd),
+            linear-gradient(#7badff, #4b87ff),
+            linear-gradient(#5094ff, #2965e7),
+            linear-gradient(#69a1ff 0%, #3080fd 50%, #6b9ffc 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgb(99, 166, 253), rgba(255,255,255,0));
+    -fx-text-fill: white;
+}
+
+.titled-pane:hover > .title 
+{
+/*-fx-background-color: #5390ed;*/
+    -fx-background-color:
+            linear-gradient(#4e91ff, #216cff),
+            linear-gradient(#5ea4ff, #3576fd),
+            linear-gradient(#3583fd, #1055e3),
+            linear-gradient(#5289fc 0%, #1e7aff 50%, #4885ff 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgb(74, 143, 255), rgba(255,255,255,0));
+}
+
+.titled-pane:focused > .title 
+{
+-fx-color: -fx-focus-color;
+-fx-border: 0.1px;
+-fx-border-color: whitesmoke;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .title > .arrow-button 
+{
+ visibility: hidden;
+ -fx-pref-width: 0;
+-fx-opacity: 0;
+}
+
+.titled-pane:focused > .title > .arrow-button .arrow 
+{
+-fx-background-color: white;
+}
+
+.accordion-color{
+    -fx-background-color: #4d94ff;
+}
+
+.inside-titlePane{
+    -fx-background-color: #4d94ff;
+}
+
+.under-menu{
+   /* -fx-background-color: #4d94ff; */
+    -fx-background-color:
+            linear-gradient(#6b9fff, #3a81fd),
+            linear-gradient(#7badff, #4b87ff),
+            linear-gradient(#5094ff, #2965e7),
+            linear-gradient(#69a1ff 0%, #3080fd 50%, #6b9ffc 100%),
+            linear-gradient(from 0% 0% to 5% 60%, rgb(99, 166, 253), rgba(255,255,255,0));
+}
+
+.navbar-buttons{
+    -fx-background-color: #80b3ff;
+}
+
+.navbar-buttons:hover{
+    -fx-background-color: #96c0ff;
+}
+
+.navbar-buttons:pressed{
+    -fx-background-color: #80b3ff;
+}

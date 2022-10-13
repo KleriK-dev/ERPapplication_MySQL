@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox prefHeight="37.0" prefWidth="685.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="761.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" text="Item Screen" />
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" top="5.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <HTMLEditor htmlText="   &lt;html lang=&quot;en&quot;&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot;&gt;        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;        &lt;style&gt;            .kle{                font-family: Calibri;            }        &lt;/style&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Field Description&lt;/STRONG&gt;&lt;/P&gt;&lt;P  class=&quot;kle&quot;&gt;&lt;STRONG&gt;Code :&lt;/STRONG&gt; It is the only code of its kind. The Code of a new item can be generated automatically by pressing the button on the right side.&lt;BR&gt;&lt;STRONG&gt;Description :&lt;/STRONG&gt; The main description of the item.&lt;BR&gt;&lt;STRONG&gt;Barcode :&lt;/STRONG&gt; The only BarCode of its kind.&lt;BR&gt;&lt;STRONG&gt;Supplier :&lt;/STRONG&gt; The main supplier of the item. This field is automatically updated when the purchase of the specific item is made where it will see from whom it was purchased.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Sale Prices&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;The program has 3 basic prices (purchase, wholesale, retail) which can&amp;nbsp;be used in the registration of purchases - sales.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;The&amp;nbsp;&lt;STRONG&gt;purchase price&lt;/STRONG&gt; has a special behavior. This is&amp;nbsp;updated&amp;nbsp;when we&amp;nbsp;purchase from the supplier's invoice.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;% Discount :&lt;/STRONG&gt; By setting the % discount different from 0, then in each sale or customer order, it appears as the initial price in the % discount of the item. It is useful for items with a fixed discount rate (eg samples).&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Wholesale Price :&lt;/STRONG&gt; In this field we define the fixed wholesale price of the item which is without VAT. We know this by the checkbox&amp;nbsp;that is not checked. If the customer is wholesaler, in customer pricing the items will automatically have the wholesale price.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Retail Price :&lt;/STRONG&gt; In this field we define the fixed retail price of the item which is with VAT. We know this by the checkbox&amp;nbsp;that&amp;nbsp;is checked. If the customer is retail, in customer pricing the items will automatically have the retail price.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;VAT Category :&lt;/STRONG&gt; Here you define the VAT category for this type.&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Unit of Measurement:&lt;/STRONG&gt;&amp;nbsp;In this field you define the measurement unit of this item&amp;nbsp;(exmp. Piece, Kilos, Meters etc.)&amp;nbsp;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Traffic (This tab is shown only on edit and view item window)&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/P&gt;&lt;P class=&quot;kle&quot;&gt;&lt;FONT color=#ff0000&gt;&lt;/FONT&gt;&lt;STRONG&gt;Remaining : &lt;/STRONG&gt;This field will display the remaining of this item on your storage.&lt;BR&gt;&lt;BR&gt;&lt;/P&gt;            &lt;/body&gt;    &lt;/html&gt;" prefHeight="442.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </HTMLEditor>
+    </center>
+</BorderPane>

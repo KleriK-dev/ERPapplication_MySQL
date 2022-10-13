@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox prefHeight="37.0" prefWidth="685.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="761.0" styleClass="fields" stylesheets="@../../styles/TableViewWindowsStyling.css" text="Customer Screen" />
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" top="5.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <HTMLEditor htmlText="        &lt;html lang=&quot;en&quot;&gt;            &lt;head&gt;                &lt;meta charset=&quot;UTF-8&quot;&gt;                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;                &lt;style&gt;                    .kle{                        font-family: Calibri;                    }                &lt;/style&gt;            &lt;/head&gt;            &lt;body&gt;        &lt;P class=&quot;kle&quot;&gt;[Databases -&amp;gt; Customers -&amp;gt; button: New Customer]&lt;BR&gt;[Databases -&amp;gt;             Customers -&amp;gt; button: Edit Customer]&lt;BR&gt;[Databases -&amp;gt; Customers -&amp;gt;             button:&amp;nbsp;View Customer]&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;Your Customer Screen is divided into the following sections&lt;BR&gt;&lt;STRONG&gt;Tax             Information&lt;BR&gt;&lt;/STRONG&gt;&lt;U&gt;Name, Profession, Address, Area, Tax Code, DOY&lt;/U&gt;.             These are the data that are also printed on his documents. In the TAX code, the             application checks the correctness only if it has a length of 9 digits (Greek             TAX code).&lt;BR&gt;In case you specify that you want to check customer's TAX code             then it is mandatory that the TAX code is correct.&lt;BR&gt;&lt;BR&gt;&lt;STRONG&gt;Contact             details&lt;/STRONG&gt;&lt;BR&gt;Last Name - Manager Name, Telephones, fax, e-mail and             website.&lt;BR&gt;&lt;BR&gt;&lt;STRONG&gt;&lt;FONT             color=#ff0000&gt;Logistics&lt;BR&gt;&lt;/FONT&gt;&lt;/STRONG&gt;&lt;BR&gt;&lt;STRONG&gt;VAT status: &lt;/STRONG&gt;Its             VAT status, to automatically derive the% VAT invoiced (for special cases such as             Margin, zero VAT - exports).&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Check if TAX code is correct: &lt;/STRONG&gt;If you don't&amp;nbsp;check it             then the TAX code is not&amp;nbsp;checked. It is useful for Individuals who do not             have their TAX number or for companies that are not Greek and therefore do not             participate in the centralized and the TAX number algorithm does not apply. &lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Check DOY field: &lt;/STRONG&gt;If you don't check it then the field of DOY             is not checked. This way we can leave it empty. In case it is checked we have to             insert customer's DOY to save him in database.&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Price list: &lt;/STRONG&gt;The price list with which it is invoiced.&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;Method of Collection: &lt;/STRONG&gt;The usual method of paying in             documents.&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;&lt;STRONG&gt;&lt;FONT color=#ff0000&gt;Notes&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;Here we have a big text field where we can input some notes for this             customer. It is usefull for saving some other information for this customer that             are not given by the application to separated text fields.&lt;/P&gt;            &lt;P class=&quot;kle&quot;&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&lt;/P&gt;                            &lt;/body&gt;    &lt;/html&gt;  " prefHeight="442.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </HTMLEditor>
+    </center>
+</BorderPane>
